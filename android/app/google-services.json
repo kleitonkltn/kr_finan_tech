@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "415457144319",
+    "firebase_url": "https://krfinantech.firebaseio.com",
+    "project_id": "krfinantech",
+    "storage_bucket": "krfinantech.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:415457144319:android:b8bf49784d3d0e0a45cbca",
+        "android_client_info": {
+          "package_name": "com.example.finan_tech"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "415457144319-862gmn7tfc8pobkaf20u62tfn0sp1r8t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCN3xrlMkCAVYhSU6FWR3PQyGx32YSYp7I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "415457144319-862gmn7tfc8pobkaf20u62tfn0sp1r8t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
