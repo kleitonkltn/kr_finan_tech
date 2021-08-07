@@ -6,7 +6,7 @@ import 'slide_page_widget.dart';
 class SlideWidget extends StatelessWidget {
   final ValueChanged<int> onPageChanged;
 
-  const SlideWidget({Key key, this.onPageChanged}) : super(key: key);
+  const SlideWidget({required this.onPageChanged}) : super();
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -15,21 +15,20 @@ class SlideWidget extends StatelessWidget {
         height: MediaQuery.of(context).size.height * 0.4,
         child: PageView(
           physics: BouncingScrollPhysics(),
-          onPageChanged:onPageChanged,
+          onPageChanged: onPageChanged,
           children: <Widget>[
             SlidePageWidget(
               text: AppTranslate(context).text('intro.text_step1'),
               asset: AssetsConst.step1,
             ),
             SlidePageWidget(
-              text:
-                  AppTranslate(context).text('intro.text_step2'),
+              text: AppTranslate(context).text('intro.text_step2'),
               asset: AssetsConst.step2,
             ),
             SlidePageWidget(
-                text: AppTranslate(context).text('intro.text_step3'),
-                asset: AssetsConst.step3,
-              ),
+              text: AppTranslate(context).text('intro.text_step3'),
+              asset: AssetsConst.step3,
+            ),
           ],
         ),
       ),

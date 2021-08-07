@@ -5,14 +5,13 @@ import 'package:mobx/mobx.dart';
 import '../core/theme/app_theme_factory.dart';
 import '../interfaces/shared_repository_interface.dart';
 import '../interfaces/theme_app_interface.dart';
-import '../repositories/shared_repository.dart';
 
 part 'app_controller.g.dart';
 
 class AppController = _AppControllerBase with _$AppController;
 
 abstract class _AppControllerBase with Store {
-  SharedRepository sharedRepository = Modular.get<ISharedRepositoryInterface>();
+  final sharedRepository = Modular.get<ISharedRepositoryInterface>();
   _AppControllerBase() {
     loadTheme();
   }

@@ -5,18 +5,18 @@
 // gestures. You can also use WidgetTester to find child widgets in the widget
 // tree, read text, and verify that the values of widget properties are correct.
 
-
 import 'package:finan_tech/app/modules/app_module.dart';
+import 'package:finan_tech/app/views/pages/main/app_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_test/flutter_test.dart';
-
 
 void main() {
   testWidgets('Counter increments smoke test', (tester) async {
     // Build our app and trigger a frame.
     await tester.pumpWidget(ModularApp(
       module: AppModule(),
+      child: AppWidget(),
     ));
 
     // Verify that our counter starts at 0.

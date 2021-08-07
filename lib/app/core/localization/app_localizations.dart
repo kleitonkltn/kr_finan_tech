@@ -9,7 +9,8 @@ class AppLocalizations {
 
   AppLocalizations(this.locale);
 
-  Map<String, dynamic> _localizationsStrings; // Mudança de String para Dynamic
+  late Map<String, dynamic>
+      _localizationsStrings; // Mudança de String para Dynamic
 
   Future<bool> load() async {
     var jsonString =
@@ -24,8 +25,8 @@ class AppLocalizations {
   }
 
   String translate(String key,
-      {Map<String, String> params, String defaultValue = ''}) {
-    var value; 
+      {required Map<String, String>? params, String defaultValue = ''}) {
+    var value;
     // Modificação do método para pegar json concatenado com . por nível
 
     if (key.contains('.')) {
@@ -38,7 +39,7 @@ class AppLocalizations {
       });
     }
 
-    // tratamento para caso não venha nada 
+    // tratamento para caso não venha nada
     if (value == null) {
       return throw ArgumentError(
           'key: $key not found in ${locale.languageCode}.json');
@@ -51,11 +52,11 @@ class AppLocalizations {
       });
     }
 
-    // caso valor esteja nulo retorna o valor default 
+    // caso valor esteja nulo retorna o valor default
     return value ?? defaultValue;
   }
 
-  static AppLocalizations of(BuildContext context) {
+  static AppLocalizations? of(BuildContext context) {
     return Localizations.of<AppLocalizations>(context, AppLocalizations);
   }
 

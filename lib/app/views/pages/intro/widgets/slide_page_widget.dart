@@ -2,14 +2,11 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/consts/colors_consts.dart';
 
-
-
 class SlidePageWidget extends StatelessWidget {
   final String text;
   final String asset;
 
-  const SlidePageWidget({Key key, this.text = '', this.asset = ''})
-      : super(key: key);
+  const SlidePageWidget({this.text = '', this.asset = ''}) : super();
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +18,7 @@ class SlidePageWidget extends StatelessWidget {
           text,
           style: Theme.of(context)
               .textTheme
-              .headline6
+              .headline6!
               .copyWith(color: ColorsConst.grey600, fontSize: 18),
         ),
         Container(

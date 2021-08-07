@@ -15,26 +15,22 @@ import 'home_module.dart';
 import 'intro_module.dart';
 import 'login_module.dart';
 
-class AppModule extends MainModule {
-  FirebaseAuth firebaseAuth = FirebaseAuth.instance;
+class AppModule extends Module {
   @override
   List<Bind> get binds => [
         Bind<ISharedRepositoryInterface>((i) => SharedRepository()),
-        Bind<IAuthRepository>((i) => AuthRepository(firebaseAuth)),
+        Bind<IAuthRepository>((i) => AuthRepository(i())),
         Bind((i) => LocalStorage()),
         Bind((i) => AppController()),
       ];
 
   @override
-  Widget get bootstrap => AppWidget();
-
-  @override
-  List<Router> get routers => [
-        Router(RoutersConst.splash,
+  List<ModularRoute> get routes => [
+        ChildRoute(RoutersConst.splash,
             child: (context, args) => SplashPage(),
             transition: TransitionType.noTransition),
-        Router(RoutersConst.intro, module: IntroModule()),
-        Router(RoutersConst.home, module: HomeModule()),
-        Router(RoutersConst.login, module: LoginModule()),
+        ModuleRoute(RoutersConst.intro, module: IntroModule()),
+        ModuleRoute(RoutersConst.home, module: HomeModule()),
+        ModuleRoute(RoutersConst.login, module: LoginModule()),
       ];
 }

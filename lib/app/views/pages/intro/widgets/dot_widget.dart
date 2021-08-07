@@ -2,13 +2,11 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/consts/colors_consts.dart';
 
-
-
 class Dot extends StatelessWidget {
   final int index;
   final bool isActive;
 
-  const Dot({Key key, this.isActive, this.index}) : super(key: key);
+  const Dot({required this.isActive, required this.index}) : super();
   @override
   Widget build(BuildContext context) {
     return Padding(

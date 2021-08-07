@@ -8,13 +8,11 @@ class SharedRepository implements ISharedRepositoryInterface {
   static const String constThemeModeLight = 'ThemeMode.light';
   @override
   String readUserInfo() {
-    return null;
+    return '';
   }
 
   @override
-  Future<void> saveUserInfo(String userInfo) {
-    return null;
-  }
+  Future<void> saveUserInfo(String userInfo) async {}
 
   @override
   Future<ThemeMode> readThemeMode() async {
@@ -22,10 +20,10 @@ class SharedRepository implements ISharedRepositoryInterface {
       switch (value) {
         case constThemModeDark:
           return ThemeMode.dark;
-          break;
+
         case constThemeModeLight:
           return ThemeMode.light;
-          break;
+
         default:
           return ThemeMode.light;
       }

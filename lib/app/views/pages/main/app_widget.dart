@@ -15,11 +15,9 @@ class AppWidget extends StatelessWidget {
     return Observer(builder: (context) {
       return MaterialApp(
         title: 'FinanTech',
-        initialRoute: RoutersConst.intro,
+        initialRoute: RoutersConst.splash,
         theme: Modular.get<AppController>().themeapp.getTheme(),
         themeMode: Modular.get<AppController>().themeMode,
-        navigatorKey: Modular.navigatorKey,
-        onGenerateRoute: Modular.generateRoute,
         supportedLocales: [Locale("en", "US"), Locale("pt", "BR")],
         localizationsDelegates: [
           AppLocalizations.delegate,
@@ -28,14 +26,14 @@ class AppWidget extends StatelessWidget {
         ],
         localeResolutionCallback: (locale, supportedLocales) {
           for (var supportedLocale in supportedLocales) {
-            if (supportedLocale.languageCode == locale.languageCode &&
+            if (supportedLocale.languageCode == locale!.languageCode &&
                 supportedLocale.countryCode == locale.countryCode) {
               return supportedLocale;
             }
           }
           return supportedLocales.first;
         },
-      );
+      ).modular();
     });
   }
 }
